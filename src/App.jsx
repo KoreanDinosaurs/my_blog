@@ -1,7 +1,9 @@
 import React from "react";
 
+import Router from "./route/Router";
+
 const App = () => {
-  return <div>zzss</div>;
+  return <Router />;
 };
 
 export default App;
