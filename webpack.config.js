@@ -3,10 +3,13 @@ const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin"
 
 module.exports = {
   mode: "development", // 실서비스 : production
-  devtool: "eval", // 빠르게 하는 것
+  devtool: "eval",
   resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src/"),
+    },
     extensions: [".js", ".jsx", "css"],
-  },
+  }, // 모듈 해석에 대한 설정
   entry: {
     app: "/src/index",
   },
