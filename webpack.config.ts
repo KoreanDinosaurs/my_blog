@@ -24,6 +24,22 @@ module.exports = {
         loader: "ts-loader",
         exclude: path.join(__dirname, "node_modules"),
       },
+      // {
+      //   test: /\.svg$/,
+      //   use: ["@svgr/webpack"],
+      //   include: ["src", "src/custom.d.ts"],
+      // },
+      {
+        test: /\.(png|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[name].[ext]?[hash]",
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [new ReactRefreshPlugin()], // 추가 확장 프로그램
